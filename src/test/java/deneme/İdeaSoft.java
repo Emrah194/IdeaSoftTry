@@ -2,6 +2,7 @@ package deneme;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 
 public class İdeaSoft {
@@ -23,8 +24,16 @@ public class İdeaSoft {
 		}
 		}
 		driver.findElement(By.xpath("/html/body/header/div/div/div/div[3]/div/div[3]/a")).click();//sepet sayfasına gidilir.
+		WebElement inputElement = driver.findElement(By.xpath("//*[@id=\"cart-items\"]/div/div/div[2]/div/div/div[2]/div/div/div/input"));
+		@SuppressWarnings("deprecation")
+		String value = inputElement.getAttribute("value");
+		if ("5".equals(value)) {
+			System.out.println("Islem Basarili");
+		}else {
+			System.out.println("Tekrar deneyiniz:");
+			System.out.print(value);
+		}
 		
-
 	}
 
 }
