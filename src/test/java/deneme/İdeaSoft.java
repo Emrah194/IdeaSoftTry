@@ -24,10 +24,9 @@ public class İdeaSoft {
 		}
 		}
 		driver.findElement(By.xpath("/html/body/header/div/div/div/div[3]/div/div[3]/a")).click();//sepet sayfasına gidilir.
-		WebElement inputElement = driver.findElement(By.xpath("//*[@id=\"cart-items\"]/div/div/div[2]/div/div/div[2]/div/div/div/input"));
-		@SuppressWarnings("deprecation")
-		String value = inputElement.getAttribute("value");
-		if ("5".equals(value)) {
+		WebElement inputElement = driver.findElement(By.xpath("//*[@id=\"cart-items\"]/div/div/div[2]/div/div/div[2]/div/div/div/input"));//sepetteki ürün sayısının bulunması
+		String value = inputElement.getAttribute("value");//Sepetteki ürün sayısını değişkene atanması.
+		if ("5".equals(value)) {//eğer sepetteki ürün sayısını 5 e eşit olup olmadığının kontrolü
 			System.out.println("Islem Basarili");
 		}else {
 			System.out.println("Tekrar deneyiniz:");
